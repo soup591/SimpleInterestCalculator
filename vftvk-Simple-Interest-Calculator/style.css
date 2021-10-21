@@ -1,0 +1,26 @@
+/* We simply set background color, font color and font style for the body and h1 elements here */
+body 
+{
+    background-color:black;
+    font-family:arial;
+    color:white
+    
+}
+
+h1
+{
+    color:grey;
+    font-family:verdana
+}
+
+/* Below, we change lots of style information for the class "maindiv" we created in the HTML document */
+
+.maindiv 
+{
+    background-color:white;
+    color:black;
+    width:300px;
+    padding:20px;
+    border-radius:25px;
+    align:center
+}

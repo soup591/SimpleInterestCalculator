@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+    <!-- The two lines below are used to link the HTML doc to both the Javascript and Css documents-->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+    <!--A simple title for the document. This is not seen-->
+    <title>Simple Interest Calculator</title>
+    <body>
+
+        <!-- We create a div class, so it can be referenced and manipulated in Javascript-->
+        <div class="maindiv">
+            <h1>Simple Interest Calculator</h1>
+
+            <!-- 
+            Below is the principal amount field, where only positive numbers are allowed to be entered. If a value of zero 
+            or below is entered, the input box is focused on and the input cleared. Note on the onchange and onfocus events that 
+            verify the number is above zero, and if not, the box is focused on and the value is cleared for re-entering
+            -->
+            Amount <input type="number"  id="principal" onchange="valueCheck()" onfocus="this.value=''">  <br/>
+
+            <!-- 
+                We set the input type to range, which creates a slider for us to use. We then set the minimum, maximum, step,
+                default values and call an onchange function from script.js to dynamically update the slider value as needed
+            -->
+            Rate <input type="range"  id="rate" min="1" max="20" step="0.25" value="10.25" onchange="updateRate()">  
+
+            <!-- We set the default value of the slider to 10.25% -->
+            <span id="rate_val"> 
+            10.25%
+            </span>
+            <br/>
+
+            <!-- 
+            The number of years box is set up as a drop down, with only values 1 through 10 available to pick as 
+            an option
+            -->
+            No. of Years <id="years">
+            <select id="years">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br/> 
+
+            <!-- A Compute Interest button, which calls the compute() function from script.js to provide results-->
+            <button onclick="compute()">Compute Interest</button>
+
+            <!-- Space below is designated to display our results, which are calculated in the compute() function in script.js-->
+            <span id="result">
+
+            </span>
+        </div>
+    </body>
+    <footer> 
+        <!-- A footer with copyright information and my name -->
+        &#169; This Calculator belongs to Ryan Campbell
+    
+    </footer>
+</html>
